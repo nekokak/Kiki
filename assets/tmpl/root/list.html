@@ -1,0 +1,12 @@
+? extends 'base.html';
+
+? block content => sub {
+
+  <ul>
+? while (my $row = $s->{list}->next) {
+    <li><a href="/<?= $row->rid ?>"><?= $row->title ?></a></li>
+? }
+  </ul>
+
+? }
+

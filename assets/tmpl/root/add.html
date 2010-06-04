@@ -1,0 +1,27 @@
+? extends 'base.html';
+
+? block content => sub {
+  <div id="middle">
+    <div class="middle_title">
+      New Entry....
+    </div>
+    <div class="middle_text">
+      <form action="/add" method="POST">
+        <table>
+          <tr>
+            <th>title</th>
+            <td><input type="text" name="title" size="20" /></td>
+          </tr>
+          <tr>
+            <th>body</th>
+            <td><textarea name="body" rows="30" cols="90"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="New Entry!" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+? }
+

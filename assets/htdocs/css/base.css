@@ -1,0 +1,92 @@
+body, table, input, textarea, select, li, button{
+  line-height:1.5em;
+  color:#333;
+}       
+body{
+  font-size:13px;
+  background:#fff;
+  margin:0;
+  padding:0;
+  text-align:center;
+}   
+
+pre{
+  background:#eeeeee;
+}
+
+#container{ 
+  margin:0 auto;
+  width:920px;
+  text-align:left;
+  position:relative;
+}
+.inner{
+  position:relative;
+}
+#header{
+  position:relative;
+}   
+#footer{
+  position:relative;
+  clear:both;
+  text-align: center;
+}
+
+.content{
+  clear:both;
+  padding:1em 0;
+}
+.main, .secondary, .tertiary, .quaternary{
+  float:left;
+  display:inline;
+}
+#footer a, #footer a:visited{
+  text-decoration:underline;
+}
+.main{width:900px;}
+.secondary{width:280px;margin-left:40px;}
+.tertiary{}
+.quaternary{}
+
+
+#nav, #nav ul, #nav li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}   
+#nav li{
+  float:left;
+  display:inline;
+  position:relative;
+  line-height:32px;
+  height:32px;
+  margin-right:2em;
+}   
+    
+#nav ul{
+  position:absolute;
+  left:0;
+  top:32px;
+  padding:5px 10px;
+  width:200px;    
+  background:#fff;
+  display:none;
+  z-index:1000;
+}
+#nav ul li{
+  float:none;
+  display:block;
+}
+
+#header h1{
+  line-height:50px;
+  height:50px;
+  margin:0;
+}
+#header h1 a{       
+}
+
+.content a, .content a:visited{
+  text-decoration:underline;
+}
+

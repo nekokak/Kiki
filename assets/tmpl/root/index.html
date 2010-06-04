@@ -1,0 +1,10 @@
+? extends 'base.html';
+
+? block content => sub {
+
+<?= raw_string $s->{page}->formatted_body ?>
+
+<span style="font-size:xx-small; text-align: right;"><a href="/edit/<?= $s->{page}->rid ?>">edit</a></span>
+
+? }
+
