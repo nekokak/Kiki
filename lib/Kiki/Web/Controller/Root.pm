@@ -34,7 +34,7 @@ sub do_add {
 
         my $validator = $c->validator->valid('page')->add;
         if ($validator->has_error) {
-            $c->stash->{validator} = api('ValidatorMessage')->set($validator);
+            $c->stash->{validator} = $validator;
             $c->fillin_fdat($c->req->parameters->as_hashref_mixed);
             return;
         }
@@ -59,7 +59,7 @@ sub do_edit {
 
         my $validator = $c->validator->valid('page')->edit_or_delete;
         if ($validator->has_error) {
-            $c->stash->{validator} = api('ValidatorMessage')->set($validator);
+            $c->stash->{validator} = $validator;
             $c->fillin_fdat($c->req->parameters->as_hashref_mixed);
             return;
         }

@@ -1,0 +1,7 @@
+? if ($s->{validator}) {
+  <span style="color: red;">
+? for my $msg ($s->{validator}->get_error_messages_from_param($_[0])) {
+    <?= $msg ?><br />
+? }
+  </span><br />
+? }

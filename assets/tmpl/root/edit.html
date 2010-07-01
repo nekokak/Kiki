@@ -10,9 +10,7 @@
           <tr>
             <th>title</th>
             <td>
-? if ($s->{validator}) {
-              <?= raw_string $s->{validator}->get_error_messages('title') ?>
-? }
+              <?= include('include/validator.html', 'title') ?>
               <input type="text" name="title" size="20" value="" />
             </td>
           </tr>

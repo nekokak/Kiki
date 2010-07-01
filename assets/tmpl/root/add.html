@@ -10,18 +10,14 @@
           <tr>
             <th>title</th>
             <td>
-? if ($s->{validator}) {
-              <?= raw_string $s->{validator}->get_error_messages('title') ?>
-? }
+              <?= include('include/validator.html','title') ?>
               <input type="text" name="title" size="20" />
             </td>
           </tr>
           <tr>
             <th>body</th>
             <td>
-? if ($s->{validator}) {
-              <?= raw_string $s->{validator}->get_error_messages('body') ?>
-? }
+              <?= include('include/validator.html', 'body') ?>
               <textarea name="body" rows="30" cols="90"></textarea>
             </td>
           </tr>
