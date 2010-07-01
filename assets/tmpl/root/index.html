@@ -2,9 +2,12 @@
 
 ? block content => sub {
 
-<?= raw_string $s->{page}->formatted_body ?>
-
-<span style="font-size:xx-small; text-align: right;"><a href="/edit/<?= $s->{page}->rid ?>">edit</a></span>
+  <div class="content_title">
+      <?= $s->{page}->title ?> <span style="font-size:xx-small; text-align: right;"><a href="/edit/<?= $s->{page}->rid ?>">edit</a></span>
+  </div>
+  <div class="content_body">
+    <?= raw_string $s->{page}->formatted_body ?>
+  </div>
 
 ? }
 

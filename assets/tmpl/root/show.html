@@ -1,16 +1,11 @@
 ? extends 'base.html';
 
 ? block content => sub {
-  <div class="one_topic_title">
-    <span>
-      <?= $s->{page}->title ?>
-    </span>
+  <div class="content_title">
+      <?= $s->{page}->title ?> <span style="font-size:xx-small; text-align: right;"><a href="/edit/<?= $s->{page}->rid ?>">edit</a></span>
   </div>
-  <div class="one_topic_body">
-    <fieldset>
-      <?= raw_string $s->{page}->formatted_body ?>
-    </fieldset>
-    <span style="font-size:xx-small; text-align: right;"><a href="/edit/<?= $s->{page}->rid ?>">edit</a></span>
+  <div class="content_body">
+    <?= raw_string $s->{page}->formatted_body ?>
   </div>
 ? }
 

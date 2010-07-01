@@ -5,7 +5,7 @@ use Path::Class;
 my $home = container('home');
 
 return +{
-    title => 'your wiki title',
+    title => 'your wiki title here.',
     view => {
         mt => +{
             path => $home->file('assets/tmpl')->stringify,

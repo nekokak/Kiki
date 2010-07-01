@@ -1,11 +1,10 @@
 ? extends 'base.html';
 
 ? block content => sub {
-  <div id="middle">
-    <div class="middle_title">
+    <div class="content_title">
         Edit Entry....
     </div>
-    <div class="middle_text">
+    <div class="content_body">
       <form action="/edit/<?= $s->{page}->rid  ?>" method="POST">
         <table>
           <tr>
@@ -24,6 +23,5 @@
         </table>
       </form>
     </div>
-  </div>
 ? }
 

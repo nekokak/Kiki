@@ -1,32 +1,48 @@
-body, table, input, textarea, select, li, button{
+body {
+  font-family: Verdana, sans-serif;
   line-height:1.5em;
-  color:#333;
-}       
-body{
+}
+body {
   font-size:13px;
-  background:#fff;
+  background:#ffffff;
   margin:0;
   padding:0;
   text-align:center;
-}   
-
-pre{
-  background:#eeeeee;
 }
 
-#container{ 
-  margin:0 auto;
-  width:920px;
+.button {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  box-shadow: inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 3px #8ec1da;
+  -webkit-box-shadow: inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 3px #8ec1da;
+  -moz-box-shadow: inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 3px #8ec1da;
+  text-shadow: 0 1px #fff;
+  border: 1px solid #8ec1da;
+  padding: 5px 30px;
+  color: #3985a8;
+  background-color: #ddeef6;
+}
+
+.container {
+  width: 100%;
   text-align:left;
   position:relative;
 }
-.inner{
-  position:relative;
+
+.header {
+  background: #333333; 
+  padding: 0px 0px 0px 20px;
+  color: #ffffff;
 }
-#header{
-  position:relative;
-}   
-#footer{
+
+.header h1{
+  line-height:50px;
+  height:50px;
+  margin:0;
+}
+
+.footer{
   position:relative;
   clear:both;
   text-align: center;
@@ -36,57 +52,53 @@ pre{
   clear:both;
   padding:1em 0;
 }
-.main, .secondary, .tertiary, .quaternary{
+.main{
   float:left;
   display:inline;
 }
-#footer a, #footer a:visited{
-  text-decoration:underline;
+
+.content_title {
+  font-size: 20px;
+  padding: 10px 0px 0px 20px;
 }
-.main{width:900px;}
-.secondary{width:280px;margin-left:40px;}
-.tertiary{}
-.quaternary{}
 
+.content_body {
+  padding: 0px 0px 0px 20px;
+}
 
-#nav, #nav ul, #nav li{
+.code {
+  background: #DCDCDC;
+  font-size: medium;
+  line-height:1em;
+}
+
+.nav, .nav ul, .nav li{
+  background: #FDF5E6;
   margin:0;
   padding:0;
   list-style:none;
-}   
-#nav li{
+}
+.nav li{
   float:left;
   display:inline;
   position:relative;
   line-height:32px;
   height:32px;
   margin-right:2em;
-}   
-    
-#nav ul{
+}
+
+.nav ul{
   position:absolute;
   left:0;
   top:32px;
   padding:5px 10px;
-  width:200px;    
+  width:200px;
   background:#fff;
   display:none;
   z-index:1000;
 }
-#nav ul li{
+.nav ul li{
   float:none;
   display:block;
-}
-
-#header h1{
-  line-height:50px;
-  height:50px;
-  margin:0;
-}
-#header h1 a{       
-}
-
-.content a, .content a:visited{
-  text-decoration:underline;
 }
 
