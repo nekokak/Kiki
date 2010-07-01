@@ -19,7 +19,12 @@ sub do_show : Auth('Null') {
 
 sub do_list : Auth('Null') {
     my ($class, $c) = @_;
-    $c->stash->{list} = api('Page')->list;
+
+    ($c->stash->{list}, $c->stash->{has_next_page}) = api('Page')->search(
+        +{
+            page => $c->req->param('page') || 0,
+        }
+    );
 }
 
 sub do_add {

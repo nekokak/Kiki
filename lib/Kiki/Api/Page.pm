@@ -41,9 +41,31 @@ sub front {
     container('db')->single('page', {title => 'FrontPage'});
 }
 
-sub list {
-    my ($self, ) = @_;
-    container('db')->search('page', {});
+my $LIMIT = 30;
+sub search {
+    my ($self, $args) = @_;
+
+    my $rs = container('db')->resultset(
+        {
+            select => '*',
+            from   => [qw/page/],
+        }
+    );
+
+    $rs->limit($LIMIT+1);
+    my $page = $args->{page} || 1;
+    if ($page != 1) {
+        $rs->offset($LIMIT*($page -1));
+    }
+    $rs->order({ column => 'updated_at', desc => 'DESC' });
+
+    my @rows = $rs->retrieve('page')->all;
+    my $has_next = scalar(@rows) > $LIMIT ? 1 : 0;
+    if ($has_next) {
+        pop @rows;
+    }
+
+    return (\@rows, $has_next);
 }
 
 1;

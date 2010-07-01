@@ -1,0 +1,14 @@
+<div class="pager">
+  <p>
+? my $page = $c->req->param('page') || 1;
+? if ($page != 1 ){
+? my $pre_page_num = $page - 1;
+    <a href="<?= $c->uri_with({page => $pre_page_num}) ?>">&lt;PRE</a>
+? }
+
+? if ($s->{has_next_page}) {
+? my $next_page_num = $page + 1;
+    <a href="<?= $c->uri_with({page => $next_page_num}) ?>">NEXT&gt;</a>
+? }
+  </p>
+</div>

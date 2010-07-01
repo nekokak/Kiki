@@ -2,11 +2,15 @@
 
 ? block content => sub {
 
+  <?= include('include/pager.html') ?>
+
   <ul>
-? while (my $row = $s->{list}->next) {
+? for my $row (@{$s->{list}}) {
     <li><a href="/<?= $row->rid ?>"><?= $row->title ?></a> (<?= $row->updated_at->strftime('%Y/%m/%d %H:%M:%S') ?>) </li>
 ? }
   </ul>
+
+  <?= include('include/pager.html') ?>
 
 ? }
 

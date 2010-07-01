@@ -72,6 +72,10 @@ body {
   line-height:1em;
 }
 
+.pager {
+  padding: 10px 0px 0px 20px;
+}
+
 .nav, .nav ul, .nav li{
   background: #FDF5E6;
   margin:0;
