@@ -27,6 +27,20 @@ sub do_list : Auth('Null') {
     );
 }
 
+
+sub do_search : Auth('Null') {
+    my ($class, $c) = @_;
+
+    return unless $c->req->param('keyword');
+    $c->fillin_fdat($c->req->parameters->as_hashref_mixed);
+    ($c->stash->{list}, $c->stash->{has_next_page}) = api('Page')->search(
+        +{
+            page    => $c->req->param('page') || 0,
+            keyword => $c->req->param('keyword') || '',
+        }
+    );
+}
+
 sub do_add {
     my ($class, $c) = @_;
 

@@ -57,6 +57,10 @@ body {
   display:inline;
 }
 
+.search_box {
+    padding: 10px 0px 0px 20px;
+}
+
 .content_title {
   font-size: 20px;
   padding: 10px 0px 0px 20px;

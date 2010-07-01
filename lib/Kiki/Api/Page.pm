@@ -52,6 +52,10 @@ sub search {
         }
     );
 
+    if (my $keyword = $args->{keyword}) {
+        $rs->add_where('body' => {'like' => "%$keyword%"});
+    }
+
     $rs->limit($LIMIT+1);
     my $page = $args->{page} || 1;
     if ($page != 1) {

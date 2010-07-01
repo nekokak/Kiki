@@ -1,0 +1,22 @@
+? extends 'base.html';
+
+? block content => sub {
+
+  <div class="search_box">
+    <form action="/search" method="get">
+        <input type="text" name="keyword" size="30" /> <input type="submit" value="search" />
+    </form>
+  </div>
+
+  <?= include('include/pager.html') ?>
+
+  <ul>
+? for my $row (@{$s->{list}}) {
+    <li><a href="/<?= $row->rid ?>"><?= $row->title ?></a> (<?= $row->updated_at->strftime('%Y/%m/%d %H:%M:%S') ?>) </li>
+? }
+  </ul>
+
+  <?= include('include/pager.html') ?>
+
+? }
+

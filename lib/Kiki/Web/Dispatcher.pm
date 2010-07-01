@@ -5,7 +5,7 @@ on '/' => run {
     return 'Root', 'index', FALSE, +{};
 };
 
-on '/(add|list)' => run {
+on '/(add|list|search)' => run {
     return 'Root', $1, FALSE, +{};
 };
 
