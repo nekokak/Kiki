@@ -28,4 +28,7 @@ return +{
             'foo.bar' => 'fooがbarですね',
         },
     },
+    users => +{
+        nekokak => 'uhuhu',
+    },
 };

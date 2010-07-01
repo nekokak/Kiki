@@ -1,22 +1,23 @@
 package Kiki::Web::Controller::Root;
 use Kamui::Web::Controller -base;
 use Kiki::Container qw/api/;
+__PACKAGE__->authorizer('+Kiki::Web::Authorizer::BasicAuth');
 
-sub do_index {
+sub do_index : Auth('Null') {
     my ($class, $c) = @_;
 
     $c->stash->{page} = api('Page')->front;
     return $c->redirect('/add', {title => 'FrontPage'}) unless $c->stash->{page};
 }
 
-sub do_show {
+sub do_show : Auth('Null') {
     my ($class, $c, $args) = @_;
 
     $c->stash->{page} = api('Page')->get($args->{rid});
     return $c->redirect('/') unless $c->stash->{page};
 }
 
-sub do_list {
+sub do_list : Auth('Null') {
     my ($class, $c) = @_;
     $c->stash->{list} = api('Page')->list;
 }
