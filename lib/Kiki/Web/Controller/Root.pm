@@ -26,6 +26,13 @@ sub do_add {
 
     if ( $c->req->is_post_request ) {
 
+        my $validator = $c->validator->valid('page')->add;
+        if ($validator->has_error) {
+            $c->stash->{validator} = api('ValidatorMessage')->set($validator);
+            $c->fillin_fdat($c->req->parameters->as_hashref_mixed);
+            return;
+        }
+
         my $page = api('Page')->add(
             $c->req->parameters
         );
@@ -43,6 +50,13 @@ sub do_edit {
     return $c->redirect('/') unless $c->stash->{page};
 
     if ( $c->req->is_post_request ) {
+
+        my $validator = $c->validator->valid('page')->edit_or_delete;
+        if ($validator->has_error) {
+            $c->stash->{validator} = api('ValidatorMessage')->set($validator);
+            $c->fillin_fdat($c->req->parameters->as_hashref_mixed);
+            return;
+        }
 
         api('Page')->edit_or_delete(
             $c->stash->{page} => $c->req->parameters

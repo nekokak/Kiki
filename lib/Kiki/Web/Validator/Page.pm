@@ -9,11 +9,10 @@ sub add {
     );
 }
 
-sub edit {
+sub edit_or_delete {
     my $self = shift;
     $self->{engine}->check(
         title => [qw/NOT_NULL/],
-        body  => [qw/NOT_NULL/],
     );
 }
 

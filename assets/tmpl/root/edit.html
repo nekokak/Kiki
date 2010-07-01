@@ -9,7 +9,12 @@
         <table>
           <tr>
             <th>title</th>
-            <td><input type="text" name="title" size="20" value="" /></td>
+            <td>
+? if ($s->{validator}) {
+              <?= raw_string $s->{validator}->get_error_messages('title') ?>
+? }
+              <input type="text" name="title" size="20" value="" />
+            </td>
           </tr>
           <tr>
             <th>body</th>
