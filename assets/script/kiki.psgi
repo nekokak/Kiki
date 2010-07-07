@@ -2,7 +2,6 @@ use Kiki::Web::Handler;
 use Kiki::Container;
 use Plack::Builder;
 my $app = Kiki::Web::Handler->new;
-$app->setup;
 
 my $home = container('home');
 builder {
