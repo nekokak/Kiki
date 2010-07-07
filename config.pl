@@ -25,7 +25,7 @@ return +{
             not_null => '[_1]が空です',
         },
         message => +{
-            'foo.bar' => 'fooがbarですね',
+            'update.conflict' => '更新が衝突しました！やりなおしてください',
         },
     },
     users => +{

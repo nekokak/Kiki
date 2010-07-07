@@ -6,6 +6,7 @@
     </div>
     <div class="content_body">
       <form action="/edit/<?= $s->{page}->rid  ?>" method="POST">
+        <?= include('include/validator.html', 'update') ?>
         <table>
           <tr>
             <th>title</th>
@@ -20,6 +21,7 @@
           </tr>
           <tr>
             <td colspan="2">
+              <input type="hidden" name="current_updated_at" value="<?= $s->{page}->updated_at->epoch ?>" />
               <input type="submit" value="Edit Entry!" />
             </td>
           </tr>

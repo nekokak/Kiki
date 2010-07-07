@@ -4,6 +4,12 @@ use Kiki::Container;
 
 sub new { bless {}, +shift }
 
+sub is_conflict {
+    my ($self, $page, $epoch) = @_;
+    return if $page->updated_at->epoch == $epoch;
+    return 1;
+}
+
 sub add {
     my ($self, $args) = @_;
 
