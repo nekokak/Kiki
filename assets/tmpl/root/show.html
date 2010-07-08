@@ -1,4 +1,6 @@
-? extends 'base.html';
+? extends 'base.html'
+
+<? block title => sub { $s->{page}->title } ?>
 
 ? block content => sub {
   <div class="content_title">
