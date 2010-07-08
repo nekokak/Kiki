@@ -1,0 +1,30 @@
+<?= raw_string qq[<\?xml version="1.0" encoding="UTF-8"?\>] ?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dcterms="http://purl.org/rss/1.0/modules/dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <generator>Kiki</generator>
+        <dc:creator>Kiki</dc:creator>
+        <webMaster><?= $c->conf->{title} ?></webMaster>
+        <link><?= $c->conf->{link} ?></link>
+        <description><?= $c->conf->{description} ?></description>
+
+        <title><?= $c->conf->{title} ?></title>
+        <pubDate><?= $s->{today}->strftime("%a, %d %b %Y %H:%M:%S %z") ?></pubDate>
+
+? for my $row (@{$s->{list}}) { 
+        <item>
+            <author><?= $c->conf->{author} ?></author>
+            <dc:creator><?= $c->conf->{creator} ?></dc:creator>
+            <link><?= $c->conf->{link} ?><?= $row->rid ?></link>
+            <description><?= $row->body ?></description>
+            <dc:date><?= $row->created_at->strftime("%a, %d %b %Y %H:%M:%S %z") ?></dc:date>
+            <title><?= $row->title ?></title>
+            <pubDate><?= $row->created_at->strftime("%a, %d %b %Y %H:%M:%S %z") ?></pubDate>
+            <content:encoded><?= $row->body ?></content:encoded>
+            <dcterms:modified><?= $row->updated_at->strftime("%a, %d %b %Y %H:%M:%S %z") ?></dcterms:modified>
+            <guid isPermaLink="true"><?= $c->conf->{link} ?><?= $row->rid ?></guid> 
+        </item> 
+? }
+
+    </channel>
+</rss>
+

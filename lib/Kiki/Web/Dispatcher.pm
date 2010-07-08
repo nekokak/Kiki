@@ -5,7 +5,7 @@ on '/' => run {
     return 'Root', 'index', FALSE, +{};
 };
 
-on '/(add|list|search)' => run {
+on '/(add|list|search|rss)' => run {
     return 'Root', $1, FALSE, +{};
 };
 

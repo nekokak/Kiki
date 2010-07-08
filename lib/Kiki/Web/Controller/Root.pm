@@ -27,6 +27,25 @@ sub do_list : Auth('Null') {
     );
 }
 
+sub do_rss : Auth('Null') {
+    my ($class, $c) = @_;
+
+    ($c->stash->{list}, ) = api('Page')->search(
+        +{
+            page => 0,
+        }
+    );
+
+    $c->stash->{today} = api('DateTime')->today;
+
+    $c->add_filter(
+        sub {
+            my ($context, $res) = @_;
+            $res->headers([ 'Content-Type' => 'application/rss+xml' ]);
+            $res;
+        }
+    );
+}
 
 sub do_search : Auth('Null') {
     my ($class, $c) = @_;
